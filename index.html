@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brand-to-Global Growth 研討會分享</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap">
+<style>
+html,body{margin:0;height:100%;background:#120B2E;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
+#stage>section{position:absolute;inset:0;width:1920px;height:1080px;display:none}
+#stage>section.on{display:flex}
+#stage>section:not(.on) *{animation:none!important}
+.pg::after{content:none!important}
+.chk svg.ic{width:36px;height:36px;color:#6A4BD6;flex:none}
+.tbl{border-collapse:collapse} .tbl th,.tbl td{padding:14px 18px;vertical-align:top} .tbl tr:not(.hd){border-bottom:1px solid #CFC7E4}
+#nav{position:fixed;right:16px;bottom:12px;display:flex;gap:8px;align-items:center;font:14px 'Space Grotesk',sans-serif;color:#C9BDEB;opacity:.35;transition:opacity .2s}
+#nav:hover{opacity:1} #nav button{background:#33227A;color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit}
+section{box-sizing:border-box;padding:128px;background:linear-gradient(135deg,#D2C7EC 0%,#E4E1EA 30%,#E4E1EA 70%,#D6CEEA 100%);color:#2B2540;font-family:'Noto Sans TC',Arial,sans-serif;display:flex;flex-direction:column;counter-increment:page}
+section.content{padding:128px 128px 160px}
+section.alt{background:linear-gradient(225deg,#D2C7EC 0%,#E0DDE8 30%,#E0DDE8 70%,#CFD3E8 100%)}
+section.dark{background:linear-gradient(135deg,#24175A 0%,#3E2590 55%,#6E37B0 100%);color:#FBFAFF}
+section.accent{background:linear-gradient(120deg,#83389F 0%,#5F3DB8 45%,#45309E 100%);color:#FBFAFF;justify-content:center}
+
+.eyebrow{align-self:flex-start;font-size:24px;font-weight:700;letter-spacing:1px;color:#FBFAFF;background:#6A4BD6;border-radius:999px;padding:6px 22px;margin:0 0 20px;line-height:1.4}
+.dark .eyebrow{background:#E9E0FF;color:#3A2378}
+.title{font-size:60px;font-weight:900;line-height:1.25;margin:0 0 48px;color:#5A3DC8}
+.dark .title{color:#FBFAFF}
+.lead{font-size:28px;line-height:1.6;color:#4A4560;margin:0}
+.dark .lead{color:#DCD3F5}
+.spacer{flex:1}
+
+.foot{position:absolute;left:128px;bottom:64px;width:1664px;display:flex;justify-content:space-between;align-items:center}
+.src{font-size:24px;color:#57526C;margin:0;line-height:1.3}
+.dark .src{color:#C9BDEB}
+.pg{font-size:24px;font-family:'Space Grotesk',Arial,sans-serif;color:#6A6580;margin:0}
+.dark .pg{color:#C9BDEB}
+.pg::after{content:counter(page)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:28px}
+.card{box-sizing:border-box;background:#ECE9F2;border:2px solid #D5CFE3;border-radius:24px;padding:40px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(90,61,200,0.08);animation:rise 520ms ease-out both;animation-delay:calc(var(--i, 0) * 110ms)}
+.alt .card{background:#EBE9F1}
+.dark .card{background:#33227A;border-color:#5440A6;box-shadow:none}
+.card.tight{padding:28px 36px}
+.card.hl{background:#F1EFF6;border-color:#6A4BD6;border-width:3px}
+.dark .card.hl{background:#3E2A8E;border-color:#C9B6FF}
+.card .h{font-size:36px;font-weight:900;line-height:1.3;margin:0 0 16px;color:#2B2540}
+.dark .card .h{color:#FBFAFF}
+.card .b{font-size:28px;line-height:1.55;color:#4A4560;margin:0}
+.dark .card .b{color:#DCD3F5}
+.card .tag{font-size:24px;font-weight:700;color:#6A4BD6;margin:0 0 12px;letter-spacing:1px;line-height:1.4}
+.dark .card .tag{color:#D3C4FF}
+.card .res{font-size:28px;font-weight:700;color:#6A4BD6;margin:20px 0 0;line-height:1.4}
+.dark .card .res{color:#D3C4FF}
+.card .list{font-size:28px}
+
+.num{font-family:'Space Grotesk','Noto Sans TC',Arial,sans-serif;font-size:96px;font-weight:700;line-height:1.05;color:#6A4BD6;margin:0 0 12px}
+.dark .num{color:#D3C4FF}
+.num.p{color:#2E2470}
+.dark .num.p{color:#FFB9A6}
+
+.callout{box-sizing:border-box;margin:32px 0 0;background:linear-gradient(90deg,#6542C4,#4A34A8);color:#FBFAFF;border-radius:20px;padding:24px 36px;font-size:28px;font-weight:700;line-height:1.5}
+.dark .callout{background:#F1EAFF;color:#3A2378}
+
+.list{margin:0;padding-left:34px;font-size:28px;line-height:1.55;color:#4A4560}
+.list li{margin-bottom:12px}
+.dark .list{color:#DCD3F5}
+
+.tbl{width:100%;font-size:24px;color:#4A4560}
+.tbl .hd{background:#D3C9EE}
+.tbl th{text-align:left;color:#3A2A8C;font-weight:700}
+
+.bars{display:flex;flex-direction:column;gap:14px}
+.grp{font-size:24px;font-weight:700;color:#6A4BD6;margin:8px 0 0;letter-spacing:1px}
+.bar{display:flex;align-items:center;gap:20px}
+.bar .l{font-size:28px;width:170px;margin:0;color:#2B2540}
+.track{flex:1;height:28px;background:#D0C9E2;border-radius:14px;overflow:hidden}
+.fill{height:28px;background:linear-gradient(90deg,#9B7BEF,#6A4BD6);border-radius:14px}
+.fill.low{background:#E0664C}
+.bar .v{font-family:'Space Grotesk','Noto Sans TC',Arial,sans-serif;font-size:28px;font-weight:700;width:190px;margin:0;color:#2B2540}
+
+.cover-bar{width:160px;height:8px;background:linear-gradient(90deg,#FFB9A6,#D3C4FF);border-radius:4px;margin:0 0 48px}
+.cover-title{font-family:'Space Grotesk','Noto Sans TC',Arial,sans-serif;font-size:96px;font-weight:700;line-height:1.1;margin:0 0 24px;color:#FBFAFF}
+.cover-sub{font-size:36px;font-weight:700;color:#E3DAFA;margin:0;line-height:1.4}
+.cover-meta{font-size:24px;color:#C9BDEB;line-height:1.7;margin:0}
+
+.statement{font-size:96px;font-weight:900;line-height:1.3;margin:0;color:#FBFAFF}
+.attrib{font-size:28px;color:#FBFAFF;margin:48px 0 0;line-height:1.5}
+
+.ladder{display:flex;flex-direction:column;gap:16px}
+.rung{box-sizing:border-box;background:#33227A;border:2px solid #5440A6;border-radius:14px;padding:18px 28px;font-size:28px;font-weight:700;color:#FBFAFF;margin:0;line-height:1.4}
+.rung.top{background:#F1EAFF;color:#3A2378;border-color:#F1EAFF}
+
+.checks{display:flex;gap:40px;align-items:center;margin:32px 0 0}
+.chk{display:flex;align-items:center;gap:12px}
+.chk x-icon{width:36px;height:36px;color:#6A4BD6}
+.chk .t{font-size:28px;font-weight:700;color:#2B2540;margin:0}
+.chk-lbl{font-size:28px;color:#4A4560;margin:0}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+</style></head><body>
+<div id="stage">
+<section id="cover" class="dark">
+<p class="eyebrow">研討會重點分享 · 2026.11</p>
+<div class="cover-bar"></div>
+<h1 class="cover-title">Brand-to-Global Growth</h1>
+<p class="cover-sub">從品牌策略走向國際市場｜企業出海研討會</p>
+<div class="spacer"></div>
+<p class="cover-meta">主辦：普羅品牌 Process × 震豪數位 Digit Spark<br>講者：台灣經濟研究院、普羅品牌、LinkedIn、震豪數位、B2G Solution<br>分享人：[姓名]</p>
+
+</section>
+<section id="agenda" class="content">
+<p class="eyebrow">講座簡介</p>
+<h2 class="title">這場講座在談什麼</h2>
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:56px">
+<div>
+<p class="lead">由普羅品牌與震豪數位主辦，邀請台經院、LinkedIn、泰國 B2G Solution 與三家企業，從國際局勢、品牌溝通、B2B 數位行銷一路談到東協在地資源，討論台灣企業如何把產品實力變成國際市場的品牌信任。</p>
+<table class="tbl" style="margin-top:32px">
+<tr class="hd"><th style="width:22%">項目</th><th style="width:78%">內容</th></tr>
+<tr><td>主題</td><td>Brand-to-Global Growth：從品牌策略走向國際市場</td></tr>
+<tr><td>講者</td><td>台經院、普羅品牌（瑞士）、LinkedIn、震豪數位、B2G Solution（泰國），以及摩一間、品元、新漢的實戰分享</td></tr>
+<tr><td>對象</td><td>想出海或正在拓展海外市場的台灣企業</td></tr>
+<tr><td>核心問題</td><td>新市場的客戶從沒跟我們合作過，他們憑什麼判斷、信任我們？</td></tr>
+</table>
+</div>
+<div class="card hl" style="--i:1">
+<p class="tag">給行銷團隊的三個訊號</p>
+<h3 class="h">1. 品牌說法要一致</h3><p class="b">官網、展覽、簡報、業務講的不一樣，客戶就記不住你。</p>
+<h3 class="h" style="margin-top:24px">2. 買家先問 AI</h3><p class="b">94% 的 B2B 採購小組在跟業務洽談前，會先問 ChatGPT 這類工具。</p>
+<h3 class="h" style="margin-top:24px">3. GEO 是新戰場</h3><p class="b">官網提供可查證的答案，站外累積一致的信任訊號。</p>
+</div>
+</div>
+<div class="foot"><p class="src">主辦：普羅品牌 Process × 震豪數位 Digit Spark</p><p class="pg">2</p></div>
+
+</section>
+<section id="quote" class="accent">
+<p class="statement">世界開始為「看不見的信任」，<br>比「看得見的產能」付更高的價格。</p>
+<p class="attrib">台經院 周霞麗 副院長：過去三十年全球布局比的是效率（誰便宜、誰快、誰良率高）；<br>AI 浪潮、地緣政治、供應鏈轉向之後，比的是信任。</p>
+
+</section>
+<section id="why-now" class="content">
+<p class="eyebrow">01 大環境｜台灣經濟研究院</p>
+<h2 class="title">為什麼現在是台灣品牌出海的黃金時期</h2>
+<div class="grid2">
+<div class="card tight" style="--i:0"><p class="num">8.76%</p><p class="b">2025 年台灣經濟成長率，創 15 年新高，主要受惠 AI 與高效能運算需求</p></div>
+<div class="card tight" style="--i:1"><p class="num">9,000 億</p><p class="b">2026 年台灣出口可望突破 9,000 億美元，比 2025 年再成長約 41%</p></div>
+<div class="card tight" style="--i:2"><p class="num p">31.7%</p><p class="b">美國占台灣出口比重，已超越中國大陸及香港（23.8%），重心轉向美國與東協</p></div>
+<div class="card tight" style="--i:3"><p class="num p">3.6×</p><p class="b">2008–2025 年全球無形資產投資的成長速度，是有形資產的 3.6 倍</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：台經院簡報（主計總處、財政部、WIPO《World Intangible Investment Highlights 2026》）</p><p class="pg">4</p></div>
+
+</section>
+<section id="trust3" class="content alt">
+<p class="eyebrow">01 大環境｜台灣經濟研究院</p>
+<h2 class="title">國際買家信任台灣的三個理由</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="tag">理由一</p><h3 class="h">科技創新領導者</h3><p class="b">從 IC 設計、晶圓製造到封測的完整聚落，2 奈米量產與 A16 等先進製程持續領先；AI 新創企業超過 1 萬家。</p></div>
+<div class="card" style="--i:1"><p class="tag">理由二</p><h3 class="h">信賴供應鏈樞紐</h3><p class="b">美中科技戰後，「非紅供應鏈」成為關鍵。台灣以資安防護、穩定交付與跨域整合，協助國際夥伴分散地緣風險。</p></div>
+<div class="card" style="--i:2"><p class="tag">理由三</p><h3 class="h">永續供應鏈實踐者</h3><p class="b">已建立碳費、碳盤查與減量機制，能回應歐盟 CBAM，以及 Apple、Nike 等國際品牌對供應鏈的低碳要求。</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：台經院簡報與現場演講</p><p class="pg">5</p></div>
+
+</section>
+<section id="brand-gap" class="content">
+<p class="eyebrow">01 大環境｜台經院《2026 台灣企業品牌力大調查暨升級指南》</p>
+<h2 class="title">實力強、品牌弱：台灣企業「內強外弱」</h2>
+<div style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px">
+<div class="bars">
+<p class="grp">內部指標</p>
+<div class="bar"><p class="l">品牌辨識度</p><div class="track"><div class="fill" style="width:58.1%"></div></div><p class="v">58.1%</p></div>
+<div class="bar"><p class="l">品牌重視度</p><div class="track"><div class="fill" style="width:56.7%"></div></div><p class="v">56.7%</p></div>
+<div class="bar"><p class="l">品牌統御力</p><div class="track"><div class="fill" style="width:52.4%"></div></div><p class="v">52.4%</p></div>
+<div class="bar"><p class="l">品牌創新度</p><div class="track"><div class="fill low" style="width:42.4%"></div></div><p class="v">42.4% 最低</p></div>
+<p class="grp">外部指標</p>
+<div class="bar"><p class="l">品牌一致性</p><div class="track"><div class="fill" style="width:63%"></div></div><p class="v">63.0%</p></div>
+<div class="bar"><p class="l">品牌活躍度</p><div class="track"><div class="fill" style="width:58.8%"></div></div><p class="v">58.8%</p></div>
+<div class="bar"><p class="l">品牌好感度</p><div class="track"><div class="fill" style="width:48.6%"></div></div><p class="v">48.6%</p></div>
+<div class="bar"><p class="l">品牌互動性</p><div class="track"><div class="fill low" style="width:44.7%"></div></div><p class="v">44.7% 次低</p></div>
+</div>
+<div class="card hl" style="--i:1"><h3 class="h">問題不在實力，在「轉譯」</h3><p class="b">技術創新強：良率、效能、成本與規格。<br>品牌創新弱：價值主張、情感共鳴與使用者體驗。</p><p class="res">做了，卻沒讓客戶知道、沒有持續溝通。</p></div>
+</div>
+<div class="foot"><p class="src">數值＝該指標表現位在中至強的企業占比；樣本 1,167 家企業</p><p class="pg">6</p></div>
+
+</section>
+<section id="steps4" class="content alt">
+<p class="eyebrow">01 大環境｜台灣經濟研究院</p>
+<h2 class="title">出海四步驟：內部先行，再擴大市場溝通</h2>
+<div class="grid4">
+<div class="card" style="--i:0"><p class="num">01</p><h3 class="h">市場聚焦<br>先選對戰場</h3><p class="b">鎖定需求缺口與高潛力市場，善用產業聚落優勢，以數位通路或在地夥伴直達市場。</p></div>
+<div class="card" style="--i:1"><p class="num">02</p><h3 class="h">信任建構<br>把 MIT 變成信任資產</h3><p class="b">品質認證、供應鏈透明度與穩定交付，再用長期合作案例累積信任。</p></div>
+<div class="card hl" style="--i:2"><p class="num">03</p><h3 class="h">品牌敘事<br>技術轉成客戶價值</h3><p class="b">用客戶聽得懂的語言說明技術優勢，建立清楚的定位與差異化主張。</p></div>
+<div class="card" style="--i:3"><p class="num">04</p><h3 class="h">價值放大<br>能見度與商機轉換</h3><p class="b">數位內容與媒體精準觸及，加上展會、獎項、合作夥伴背書與政策資源。</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：台經院簡報〈台灣企業出海：品牌力決勝點〉</p><p class="pg">7</p></div>
+
+</section>
+<section id="tracks3" class="content">
+<p class="eyebrow">01 大環境｜台灣經濟研究院</p>
+<h2 class="title">前進國際市場的三大路線</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="tag">路線一</p><h3 class="h">海外設點：掌握定價權</h3><ul class="list"><li>先驗證市場，再設點</li><li>建立在地 P&amp;L、售後與技術支援</li></ul><p class="res">據點不只賣貨，把海外需求與法規帶回台灣研發</p></div>
+<div class="card" style="--i:1"><p class="tag">路線二</p><h3 class="h">經銷布局：提升話語權</h3><ul class="list"><li>篩選合適的經銷夥伴</li><li>國際化 Sales Kit 與經銷營運手冊</li></ul><p class="res">參與國際規格與認證制定，把規格變成產業標準</p></div>
+<div class="card hl" style="--i:2"><p class="tag">路線三｜與我們最相關</p><h3 class="h">數位電商：擴大觸及力</h3><ul class="list"><li>引流至自有官網與 CRM</li><li>跨國 Landing Page 與內容重新規劃</li></ul><p class="res">透過 GEO／AIO 最佳化，讓品牌成為 AI 引擎優先推薦的答案</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：台經院簡報〈企業前進國際市場的三大路線〉</p><p class="pg">8</p></div>
+
+</section>
+<section id="martin-q" class="content dark">
+<p class="eyebrow">02 品牌｜普羅品牌創辦人 Martin Kessler（前瑞士航空品牌設計總監）</p>
+<h2 class="title">海外客戶為什麼要尊重、選擇、購買我們？</h2>
+<div style="display:grid;grid-template-columns:1.15fr 1fr;gap:64px">
+<div>
+<p class="eyebrow">進入新市場的四個前提</p>
+<ul class="list">
+<li><b>明確的目標市場</b>：文化、政治、經濟、貿易條件與在地競爭</li>
+<li><b>有說服力的客戶利益</b>：比競爭者多給什麼？需要可靠的資料與事實</li>
+<li><b>接觸得到客戶</b>：有沒有語言或文化障礙</li>
+<li><b>有韌性的商業模式</b>：符合客戶付款能力、能在地調整</li>
+</ul>
+</div>
+<div>
+<p class="eyebrow">品牌成功的階梯</p>
+<div class="ladder">
+<p class="rung top" style="margin-left:180px">品牌領導力 Brand Leadership</p>
+<p class="rung" style="margin-left:120px">品牌信任：最重要的資產</p>
+<p class="rung" style="margin-left:60px">對的產品與服務</p>
+<p class="rung">清楚的品牌形象</p>
+</div>
+</div>
+</div>
+<div class="spacer"></div>
+<p class="lead">「追求成長要有林務員的心態：種下小樹苗，相信它會長成強壯、結實的大樹。」</p>
+<div class="foot"><p class="src">資料來源：Martin Kessler 現場演講</p><p class="pg">9</p></div>
+
+</section>
+<section id="three-c" class="content">
+<p class="eyebrow">02 品牌｜普羅品牌 Martin Kessler</p>
+<h2 class="title">打造品牌領導力的 3C</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="num">C1</p><p class="tag">CONSISTENCY</p><h3 class="h">一致性</h3><p class="b">用統一的品牌形象精準落實定位，讓企業價值清楚到讓人忘不掉。用頑固的一致性贏得注意力。</p></div>
+<div class="card" style="--i:1"><p class="num">C2</p><p class="tag">CONTINUITY</p><h3 class="h">延續性</h3><p class="b">資訊爆炸的年代，更要在你在乎的市場持續、穩定地傳遞與累積品牌訊息。</p></div>
+<div class="card" style="--i:2"><p class="num">C3</p><p class="tag">CONCISENESS</p><h3 class="h">精準簡練</h3><p class="b">強而好認的形象，取決於能否把定位精準地轉成視覺識別與對外樣貌。</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：Martin Kessler 現場演講（40 年品牌經驗、歐亞數百個專案）</p><p class="pg">10</p></div>
+
+</section>
+<section id="breakpoints" class="content alt">
+<p class="eyebrow">02 品牌｜普羅品牌</p>
+<h2 class="title">市場斷點：從被看見到被選擇</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="tag">STAGE 01｜被看見</p><h3 class="h">認知斷點</h3><p class="b">看過你，卻說不清你是誰、擅長什麼。常見原因：官網、展覽、簡報的自我介紹不一致。</p><p class="res">看見了，卻記不住</p></div>
+<div class="card" style="--i:1"><p class="tag">STAGE 02｜被比較</p><h3 class="h">差異斷點</h3><p class="b">知道你做什麼，卻看不出為什麼要選你。只會說「品質好、技術強、服務完整」。</p><p class="res">容易回到價格比較</p></div>
+<div class="card" style="--i:2"><p class="tag">STAGE 03｜被選擇</p><h3 class="h">信任斷點</h3><p class="b">認同你，但不敢交付關鍵專案。說「經驗豐富、客戶遍布全球」，卻缺少相關案例與交付證明。</p><p class="res">有興趣，卻不敢選擇你</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：普羅品牌簡報〈斷點診斷〉</p><p class="pg">11</p></div>
+
+</section>
+<section id="five-gaps" class="content">
+<p class="eyebrow">02 品牌｜普羅品牌</p>
+<h2 class="title">斷點背後：品牌成長的 5 個斷層</h2>
+<table class="tbl" style="font-size:26px">
+<tr class="hd"><th style="width:16%">斷層</th><th style="width:54%">症狀</th><th style="width:30%">修補方向</th></tr>
+<tr><td>定位斷層</td><td>沒選定優先市場與客戶，品牌價值講得太廣</td><td>先選定優先市場與客戶</td></tr>
+<tr><td>訊息斷層</td><td>官網、展會、業務對同一個品牌承諾各有一套說法</td><td>對齊同一個選擇理由</td></tr>
+<tr><td>內容斷層</td><td>說得出優勢，卻缺少客戶能拿來評估的案例與證據</td><td>補足案例與交付證據</td></tr>
+<tr><td>數據斷層</td><td>看得到曝光，卻沒追蹤詢問如何進到洽談與商機</td><td>追蹤詢問到商機的路徑</td></tr>
+<tr><td>組織斷層</td><td>行銷、業務、通路沒有共用素材，也沒有人負責更新</td><td>建立共用素材與負責窗口</td></tr>
+</table>
+<p class="callout">Alicia：「重新做品牌架構，從來都不只是行銷的事。」要收集業務、R&amp;D、服務端的經驗，一起梳理「可以被選擇的理由」。</p>
+<div class="foot"><p class="src">資料來源：普羅品牌簡報與洪翠霞 Alicia 現場演講</p><p class="pg">12</p></div>
+
+</section>
+<section id="li-b2b" class="content">
+<p class="eyebrow">03 B2B 與 AI 搜尋｜LinkedIn 王棟 Stanley</p>
+<h2 class="title">B2B 採購變了：名單更短、決策者更多、先問 AI</h2>
+<div class="grid4">
+<div class="card" style="--i:0"><p class="num">3.5</p><p class="b">家：供應商入選名單平均家數，三年前是 6 家</p></div>
+<div class="card" style="--i:1"><p class="num">6</p><p class="b">人：採購小組平均人數；大企業達 11–15 人（Gartner）</p></div>
+<div class="card" style="--i:2"><p class="num p">80%</p><p class="b">2026 年的銷售互動將透過數位管道進行（Gartner）</p></div>
+<div class="card hl" style="--i:3"><p class="num p">94%</p><p class="b">採購小組在跟業務洽談前，先用 ChatGPT、Gemini 等 LLM（6sense 2025）</p></div>
+</div>
+<p class="callout">33% 的客戶偏好不需業務介入的採購，千禧世代達 44%；B2B 買家用 AI 搜尋的速度是一般消費者的 3 倍（Forrester 2025）。</p>
+<div class="foot"><p class="src">資料來源：LinkedIn 簡報引用 Gartner、6sense 2025、Forrester 2025</p><p class="pg">13</p></div>
+
+</section>
+<section id="li-ai" class="content dark">
+<p class="eyebrow">03 B2B 與 AI 搜尋｜LinkedIn 王棟 Stanley</p>
+<h2 class="title">LLM 決定買家先看到誰，LinkedIn 影響 LLM 信任誰</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="num">#1</p><p class="b">AI 回答專業問題時引用次數最多的來源；14 個類別都在前 5，「行銷與廣告」「AI 與資料科學」排第 1</p></div>
+<div class="card" style="--i:1"><p class="num p">75%</p><p class="b">被 AI 引用的 LinkedIn 內容來自個人創作者，公司專頁只占 25%</p></div>
+<div class="card" style="--i:2"><p class="num">51–66%</p><p class="b">AI 搜尋引用的 LinkedIn 內容是長篇文章（Google AI Mode 66%、Perplexity 64%、ChatGPT Search 51%）</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：LinkedIn 簡報引用 Profound 2026、Meltwater 2026、SEMrush 2026｜多為 LinkedIn 自家或合作夥伴的研究資料，引用時請註明</p><p class="pg">14</p></div>
+
+</section>
+<section id="li-how" class="content alt">
+<p class="eyebrow">03 B2B 與 AI 搜尋｜LinkedIn 王棟 Stanley</p>
+<h2 class="title">讓品牌在 LinkedIn 被 AI 找到的三個做法</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="num">01</p><h3 class="h">最佳化公司專頁與產品專頁</h3><p class="b">強化自有的專業內容。權威性訊號讓 LLM 判斷哪些來源可信。</p></div>
+<div class="card hl" style="--i:1"><p class="num">02</p><h3 class="h">主管與員工親自發聲</h3><p class="b">用已驗證身分發布思想領導內容；用真實對話，不用制式的品牌語調。</p></div>
+<div class="card" style="--i:2"><p class="num">03</p><h3 class="h">用 AI 愛引用的格式</h3><p class="b">由主題專家撰寫的電子報與長篇文章，比品牌貼文更容易出現在 AI 搜尋結果。</p></div>
+</div>
+<p class="callout">付費＋自然觸及：付費媒體加速觸及、強化信任與品牌顯著性，讓 LLM 更可能擷取並引用這些品牌。</p>
+<div class="foot"><p class="src">資料來源：LinkedIn 簡報〈提升品牌在 LinkedIn 上被 LLM 發現的最佳實務〉</p><p class="pg">15</p></div>
+
+</section>
+<section id="ds-pain" class="content">
+<p class="eyebrow">04 出海行銷｜震豪數位 Digit Spark</p>
+<h2 class="title">出海卡住，多半是獲客鏈沒接起來</h2>
+<div class="grid2">
+<div class="card tight" style="--i:0"><h3 class="h">01 新市場沒有品牌認知</h3><p class="b">買家不知道你，也不知道為什麼要相信你</p></div>
+<div class="card tight" style="--i:1"><h3 class="h">02 展會有名單，展後沒承接</h3><p class="b">需求與下一步散在不同人的信箱和筆記裡</p></div>
+<div class="card tight" style="--i:2"><h3 class="h">03 陌生開發缺少情境</h3><p class="b">訊息沒切中產業痛點、角色與採購階段</p></div>
+<div class="card tight" style="--i:3"><h3 class="h">04 決策鏈長＋自主研究</h3><p class="b">買家先搜尋、比較，甚至先問 AI 工具</p></div>
+</div>
+<p class="callout">先診斷是哪一段漏水：能見度、信任、名單品質，還是後續追蹤？</p>
+<div class="foot"><p class="src">資料來源：震豪數位 Digit Spark 簡報〈出海行銷常見卡點〉</p><p class="pg">16</p></div>
+
+</section>
+<section id="ds-verify" class="content alt">
+<p class="eyebrow">04 出海行銷｜震豪數位 Digit Spark</p>
+<h2 class="title">先把一個市場做成「可驗證的試驗」</h2>
+<div class="grid4">
+<div class="card tight" style="--i:0"><p class="tag">01</p><h3 class="h">選市場</h3><p class="b">需求與競爭、進入門檻、通路可得性、法規與服務能力</p></div>
+<div class="card tight" style="--i:1"><p class="tag">02</p><h3 class="h">定受眾</h3><p class="b">目標產業、公司型態、採購角色、使用情境</p></div>
+<div class="card tight" style="--i:2"><p class="tag">03</p><h3 class="h">翻譯價值</h3><p class="b">符合當地用語與文化，用買家的決策思維回答問題</p></div>
+<div class="card tight" style="--i:3"><p class="tag">04</p><h3 class="h">接好漏斗</h3><p class="b">內容、通路與專屬頁；名單分級、業務追蹤、商機回饋</p></div>
+</div>
+<div class="checks"><p class="chk-lbl">先用一個市場驗證三件事：</p><div class="chk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p class="t">需求是否真實</p></div><div class="chk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p class="t">訊息是否被理解</p></div><div class="chk"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p class="t">名單是否被業務接住</p></div></div>
+<p class="callout">每一波行銷都先回答：對誰、解決什麼、用什麼證據、希望他做什麼？</p>
+<div class="foot"><p class="src">資料來源：震豪數位 Digit Spark 簡報〈Market Entry〉</p><p class="pg">17</p></div>
+
+</section>
+<section id="ds-geo" class="content">
+<p class="eyebrow">04 出海行銷｜震豪數位 Digit Spark</p>
+<h2 class="title">GEO 雙軌：官網給答案，站外累積信任</h2>
+<div class="grid2">
+<div class="card" style="--i:0"><p class="tag">官網｜自有資產</p><h3 class="h">建立可查證的答案</h3><ul class="list"><li>產品／解決方案頁回答適用對象、規格、限制、導入方式與常見問題</li><li>案例寫清楚情境、方法、可公開的證據與更新日期</li><li>可被檢索、內部連結清楚，結構化資料與頁面一致</li></ul></div>
+<div class="card" style="--i:1"><p class="tag">站外｜第三方與專業場域</p><h3 class="h">累積一致、可信的訊號</h3><ul class="list"><li>LinkedIn 觀點、產業媒體、夥伴背書、獎項公告、商會名錄、活動內容</li><li>品牌名稱、產品類別、能力與證據跨來源一致</li><li>不大量製造低品質提及，避免稀釋信任</li></ul></div>
+</div>
+<div class="foot"><p class="src">資料來源：震豪數位 Digit Spark 簡報〈GEO Dual Track〉</p><p class="pg">18</p></div>
+
+</section>
+<section id="ds-channel" class="content alt">
+<p class="eyebrow">04 出海行銷｜震豪數位 Digit Spark</p>
+<h2 class="title">跨境通路地圖：每個通路負責一個任務</h2>
+<div class="grid4">
+<div class="card tight" style="--i:0"><p class="tag">01 搜尋與需求承接</p><h3 class="h">接住主動找答案的人</h3><p class="b">SEO／AEO／GEO、Google 搜尋廣告、產品與解決方案頁</p></div>
+<div class="card tight" style="--i:1"><p class="tag">02 精準觸及與教育</p><h3 class="h">讓對的人發現你</h3><p class="b">B2B：LinkedIn、產業媒體、專業社群<br>B2C：短影音、社群、創作者</p></div>
+<div class="card tight" style="--i:2"><p class="tag">03 轉換與培育</p><h3 class="h">依動機給下一步 CTA</h3><p class="b">CRM／EDM、白皮書、研討會、試用與諮詢頁</p></div>
+<div class="card tight" style="--i:3"><p class="tag">04 信任與成交助攻</p><h3 class="h">線下信任帶回線上</h3><p class="b">展會、商會與協會、媒體公關、經銷商活動、客戶案例</p></div>
+</div>
+<div class="spacer"></div>
+<p class="lead">通路不是清單：先想清楚買家旅程卡在哪一段，再決定要補哪個通路。</p>
+<div class="foot"><p class="src">資料來源：震豪數位 Digit Spark 簡報〈Marketing Channel〉</p><p class="pg">19</p></div>
+
+</section>
+<section id="asean" class="content dark">
+<p class="eyebrow">05 東協機會｜B2G Solution 執行長 Dr. Kengkran Louvirojanakul</p>
+<h2 class="title">東協：以泰國為基地，走向區域市場</h2>
+<div style="display:grid;grid-template-columns:1fr 1.45fr;gap:56px">
+<div>
+<p class="num">1 億</p><p class="lead">東南亞的 LinkedIn 會員</p>
+<p class="num p" style="margin-top:32px">45.8 萬</p><p class="lead">東南亞企業</p>
+<p class="src" style="margin-top:32px;line-height:1.6">印尼 4,200 萬｜菲律賓 2,400 萬｜越南、馬來西亞各 1,100 萬｜泰國 700 萬｜新加坡 500 萬（LinkedIn 會員）</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div class="card tight" style="--i:0"><h3 class="h">A 科技與數位基礎建設</h3><p class="b">台灣的電子與數位技術，支援泰國的數位轉型</p></div>
+<div class="card tight" style="--i:1"><h3 class="h">B 製造與供應鏈</h3><p class="b">泰國的工業基礎、在地供應商與物流，是製造合作的起點</p></div>
+<div class="card tight hl" style="--i:2"><h3 class="h">C 區域成長</h3><p class="b">先在泰國建立客戶與夥伴關係，再拓展其他東協市場</p></div>
+</div>
+</div>
+<div class="foot"><p class="src">資料來源：B2G Solution 簡報；LinkedIn 簡報〈SEA 企業與會員概覽〉</p><p class="pg">20</p></div>
+
+</section>
+<section id="takeaways" class="content">
+<p class="eyebrow">06 帶回團隊</p>
+<h2 class="title">可以馬上用在客戶身上的 4 件事</h2>
+<div class="grid2">
+<div class="card tight hl" style="--i:0"><h3 class="h">1. 把 GEO／AIO 當成服務切口</h3><p class="b">先盤點客戶官網能不能回答適用對象、規格、限制與 FAQ，再補站外一致的訊號。特別適合 B2B 出海客戶。</p></div>
+<div class="card tight" style="--i:1"><h3 class="h">2. B2B 的 LinkedIn 要讓「人」出聲</h3><p class="b">主管與專家的個人帳號加上長文或電子報，比只經營公司專頁更容易被 AI 引用。</p></div>
+<div class="card tight" style="--i:2"><h3 class="h">3. 提案前先盤點訊息一致性</h3><p class="b">官網、展覽、簡報、業務說法是不是講同一個選擇理由？不一致就先修定位與訊息。</p></div>
+<div class="card tight" style="--i:3"><h3 class="h">4. 展後名單要接得住</h3><p class="b">名單分級、業務追蹤、商機回饋，並追蹤詢問到商機的路徑，才能證明行銷成效。</p></div>
+</div>
+<div class="foot"><p class="src">整理：[姓名]｜歡迎補充討論</p><p class="pg">21</p></div>
+
+</section>
+<section id="resources" class="content alt">
+<p class="eyebrow">06 帶回團隊</p>
+<h2 class="title">可以用的資源</h2>
+<div class="grid3">
+<div class="card" style="--i:0"><p class="tag">免費診斷</p><h3 class="h">台經院品牌強度診斷系統</h3><p class="b">線上填問卷，取得八大指標診斷報告、同產業 benchmark，以及《2026 台灣企業品牌力大調查暨升級指南》。</p></div>
+<div class="card" style="--i:1"><p class="tag">政府資源</p><h3 class="h">台灣品牌耀飛計畫</h3><p class="b">經濟部產業發展署推動，提供品牌諮詢與診斷輔導；已輔導 1,891 家企業、314 種產業，結合 80 家顧問。</p></div>
+<div class="card" style="--i:2"><p class="tag">標竿案例</p><h3 class="h">Interbrand 2025 台灣最佳國際品牌</h3><p class="b">前五名：華碩、趨勢科技、聯發科、研華、台達電。提案時可作為台灣品牌出海的參考案例。</p></div>
+</div>
+<div class="foot"><p class="src">資料來源：台經院、台灣品牌耀飛計畫簡報</p><p class="pg">22</p></div>
+
+</section>
+</div>
+<div id="nav"><button id="prev" aria-label="上一頁">‹</button><span id="cnt"></span><button id="next" aria-label="下一頁">›</button><button id="fs" aria-label="全螢幕">⛶</button></div>
+<script>
+const S=[...document.querySelectorAll('#stage>section')],st=document.getElementById('stage'),cnt=document.getElementById('cnt');
+let i=0;
+function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform=`translate(-50%,-50%) scale(${k})`}
+function go(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,j)=>s.classList.toggle('on',j===i));cnt.textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1))}
+addEventListener('resize',fit);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key)){e.preventDefault();go(i+1)}else if(['ArrowLeft','PageUp','Backspace'].includes(e.key)){e.preventDefault();go(i-1)}else if(e.key==='Home')go(0);else if(e.key==='End')go(S.length-1);else if(e.key==='f')toggleFs()});
+document.getElementById('prev').onclick=()=>go(i-1);document.getElementById('next').onclick=()=>go(i+1);
+function toggleFs(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}
+document.getElementById('fs').onclick=toggleFs;
+let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)go(i+(d<0?1:-1));x0=null});
+st.addEventListener('click',e=>{if(e.target.closest('a'))return;go(i+(e.clientX>innerWidth/2?1:-1))});
+fit();go((parseInt(location.hash.slice(1))||1)-1);
+</script>
+</body></html>
